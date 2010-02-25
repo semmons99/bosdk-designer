@@ -1,6 +1,7 @@
 = bosdk_designer
 
-Description goes here.
+This library gives you access to the Business Objects Universe Designer through
+the Ruby WIN32 API.
 
 == Note on Patches/Pull Requests
  

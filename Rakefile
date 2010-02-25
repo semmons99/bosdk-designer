@@ -6,7 +6,7 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "bosdk_designer"
     gem.summary = %Q{Access the Business Objects Universe Designer using Ruby}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.description = %Q{This library gives you access to the Business Objects Universe Designer through the Ruby WIN32 API.}
     gem.email = "semmons99@gmail.com"
     gem.homepage = "http://semmons99.github.com/bosdk_designer"
     gem.authors = ["Shane Emmons"]

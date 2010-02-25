@@ -11,8 +11,7 @@ begin
     gem.homepage = "http://semmons99.github.com/bosdk_designer"
     gem.authors = ["Shane Emmons"]
     gem.rubyforge_project = "bosdk_designer"
-    gem.add_development_dependency "rspec", ">= 1.2.9"
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    gem.add_development_dependency "rspec", "~> 1.3.0"
   end
   Jeweler::GemcutterTasks.new
   Jeweler::RubyforgeTasks.new do |rubyforge|

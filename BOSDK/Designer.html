@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: BOSDK::Designer</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/bosdk_designer/designer_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/bosdk_designer/designer.rb">lib/bosdk_designer/designer.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#M000000">::new</a></li>
+					
+					<li><a href="#M000002">#method_missing</a></li>
+					
+					<li><a href="#M000001">#open_universe</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../BOSDK.html">BOSDK</a></li>
+				
+					<li><a href="../BOSDK/Designer.html">BOSDK::Designer</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">BOSDK::Designer</h1>
+
+		<div id="description">
+			<p>
+Wrapper to the Business Objects Universe <a
+href="Designer.html">Designer</a> API
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="Visible">Visible</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="Interactive">Interactive</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="M000000"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(username, password, cms, args = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Open the <a href="Designer.html">Designer</a> Application
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/bosdk_designer/designer.rb, line 7</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">username</span>, <span class="ruby-identifier">password</span>, <span class="ruby-identifier">cms</span>, <span class="ruby-identifier">args</span> = {})
+      <span class="ruby-ivar">@designer</span> = <span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">'Designer.Application'</span>)
+      <span class="ruby-ivar">@designer</span>.<span class="ruby-constant">Logon</span>(
+        <span class="ruby-identifier">username</span>,
+        <span class="ruby-identifier">password</span>,
+        <span class="ruby-identifier">cms</span>,
+        <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:authtype</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">'secEnterprise'</span>
+      )
+      <span class="ruby-ivar">@designer</span>.<span class="ruby-constant">Visible</span> = <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:visible</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword kw">false</span>
+      <span class="ruby-ivar">@designer</span>.<span class="ruby-constant">Interactive</span> = <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:interactive</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword kw">false</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="method-missing-method" class="method-detail ">
+				<a name="M000002"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">method_missing</span><span
+						class="method-args">(method, *args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Checks if the underlying <a href="Designer.html">Designer</a> Application
+responds to the method
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="method-missing-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/bosdk_designer/designer.rb, line 27</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">method</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+      <span class="ruby-identifier">ole_method_name</span> = <span class="ruby-identifier">method</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp re">/=$/</span>, <span class="ruby-value str">''</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@designer</span>.<span class="ruby-identifier">ole_respond_to?</span>(<span class="ruby-identifier">ole_method_name</span>)
+        <span class="ruby-ivar">@designer</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">method</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-keyword kw">super</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="open-universe-method" class="method-detail ">
+				<a name="M000001"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">open_universe</span><span
+						class="method-args">(universe_folder, universe_name, lock = false)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Open the specified universe
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="open-universe-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/bosdk_designer/designer.rb, line 20</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">open_universe</span>(<span class="ruby-identifier">universe_folder</span>, <span class="ruby-identifier">universe_name</span>, <span class="ruby-identifier">lock</span> = <span class="ruby-keyword kw">false</span>)
+      <span class="ruby-ivar">@designer</span>.<span class="ruby-constant">Universes</span>.<span class="ruby-constant">OpenFromEnterprise</span>(
+        <span class="ruby-identifier">universe_folder</span>, <span class="ruby-identifier">universe_name</span>, <span class="ruby-identifier">lock</span>
+      )
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

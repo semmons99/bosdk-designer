@@ -3,6 +3,8 @@ require 'rake'
 require 'rake/clean'
 
 CLOBBER.include 'pkg'
+CLOBBER.include 'doc'
+CLOBBER.include '.yardoc'
 
 begin
   require 'jeweler'
@@ -41,12 +43,5 @@ task :spec => :check_dependencies
 
 task :default => :spec
 
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
-
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "bosdk_designer #{version}"
-  rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-end
+require 'yard'
+YARD::Rake::YardocTask.new

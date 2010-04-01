@@ -13,7 +13,7 @@ begin
     gem.summary = %Q{Access the Business Objects Universe Designer using Ruby}
     gem.description = %Q{This library gives you access to the Business Objects Universe Designer through the Ruby WIN32 API.}
     gem.email = "semmons99@gmail.com"
-    gem.homepage = "http://semmons99.github.com/bosdk_designer"
+    gem.homepage = "http://semmons99.github.com/bosdk-designer"
     gem.authors = ["Shane Emmons"]
     gem.rubyforge_project = "bosdk-designer"
     gem.add_development_dependency "rspec", "~> 1.3.0"

@@ -5,31 +5,32 @@
 
 Gem::Specification.new do |s|
   s.name = %q{bosdk_designer}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Shane Emmons"]
-  s.date = %q{2010-02-25}
+  s.date = %q{2010-04-28}
   s.description = %q{This library gives you access to the Business Objects Universe Designer through the Ruby WIN32 API.}
   s.email = %q{semmons99@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
-     "README.rdoc"
+     "README.md"
   ]
   s.files = [
     ".document",
      ".gitignore",
      "LICENSE",
-     "README.rdoc",
+     "README.md",
      "Rakefile",
      "VERSION",
+     "bosdk_designer.gemspec",
      "lib/bosdk_designer.rb",
      "lib/bosdk_designer/designer.rb",
      "spec/designer_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb"
   ]
-  s.homepage = %q{http://semmons99.github.com/bosdk_designer}
+  s.homepage = %q{http://semmons99.github.com/bosdk-designer}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{bosdk-designer}

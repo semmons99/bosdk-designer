@@ -12,7 +12,10 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "rspec", ">= 2.0.0"
 
-  s.files        = Dir.glob("lib/**/*") + %w(README.md LICENSE)
+  s.files =  Dir.glob("{lib,spec}/**/*")
+  s.files += %w(README.md LICENSE)
+  s.files += %w(Rakefile .gemtest bosdk_designer.gemspec)
+
   s.require_path = "lib"
 end
 
